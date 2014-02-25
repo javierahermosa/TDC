@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block headtitle %} - Home{% endblock %}
+
+{% block content %}
+
+	<div id="headerwrap">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-8 col-lg-offset-2">
+				<h1><b>Teralytics</b> </h1>
+				<h2>Data Challenge </h2>
+				</div>
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- headerwrap -->
+
+
+	<div class="container w">
+		<div class="row centered">
+			<br><br>
+			<div class="col-lg-4">
+				<i class="fa fa-laptop"></i>
+				<h4>DATA</h4>
+				<p>The data consists of cell phone traces recorded within areas labeled "Mall G" and "Mall S". There are a total of <b> 9,195</b> traces in Mall G and <b>50,294</b> traces in Mall S, but there can be many traces per user per day. </p>
+			</div><!-- col-lg-4 -->
+
+			<div class="col-lg-4">
+				<i class="fa fa-bolt"></i>
+				<h4>INSIGHTS</h4>
+				<p>The goal of this challenge is to show a quantitative and descriptive analysis of the cell phone data in order to turn data insights into actionable items, e.g. the managers of Mall G should have fun <b>activities on Saturdays! </b> </p>
+			</div><!-- col-lg-4 -->
+
+			<div class="col-lg-4">
+				<i class="fa fa-star"></i>
+				<h4>VISUALIZATION</h4>
+				<p>A clear representation of the results is key to have impact as a data scientist! For this project, I used Python's <b>matplotlib</b> for simple plots and <b>D3 + javascript</b> libraries for more complex graphs. </p>
+			</div><!-- col-lg-4 -->
+		</div><!-- row -->
+		<br>
+		<br>
+	</div><!-- container -->
+
+
+{% endblock %}
