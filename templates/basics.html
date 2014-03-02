@@ -4,7 +4,8 @@
 {% block menu %}
 <li><a href="{{ url_for('index') }}">HOME</a></li>
 <li class="active"><a href="{{ url_for('basics') }}">BASICS</a></li>
- <li><a href="#">REQUIRED</a></li>
+<li><a href="{{ url_for('challenge') }}">CHALLENGE</a></li>
+<li><a href="{{ url_for('beyond') }}">BEYOND</a></li>
 <li><a href="#">ABOUT</a></li>
 {% endblock %}
 
@@ -13,25 +14,38 @@
 	<div id="dg">
 		<div class="container">
 			<div class="row centered">
-				<h4>LATEST WORKS</h4>
+				<h2> BASIC FEATURES OF THE DATA</h2>
+				
+				<h3 class="text-left"> Before diving into the challenge, I take a quick look at the data.</h3>
+				
+				<h3 class="text-left"> 1. What's the size of the dataset? We have cell phone traces associated with two malls. There are <b>9,195</b> traces for Mall G and <b>50,294</b> traces from Mall S collected over a period of two weeks, from Jan 13th - Jan 26th, 2014. </h3>
+				
+				<h3 class="text-left"> 2. How many unique users are there? The Mall G and Mall S datasets have <b>5,959</b> and <b>33,797</b> unique users, respectively.</h3>
+					
+				<h3 class="text-left"> 3. What fraction of  users visit the malls only once in the two-week period? Most users visit the malls just once. Mall G and Mall S received a total of <b>85%</b> and <b>76.8%</b> unique visits, respectively (see figure below). </h3>
+				
+				<h3 class="text-left">  </h3>
 				<br>
-				<div class="col-lg-4">
-					<div class="tilt">
-					<a href="#"><img src="../static/img/p01.png" alt=""></a>
+				<div class="col-lg-6">
+					<div>
+					<a href="#"><img class="img-rounded" src="../static/img/pie_visitors_mallG.png" alt="" height="342" width="auto"></a>
 					</div>
 				</div>
 
-				<div class="col-lg-4">
-					<div class="tilt">
-					<a href="#"><img src="../static/img/p03.png" alt=""></a>
-					</div>
+				<div class="col-lg-6">
+					<!-- <div class="tilt"> -->
+					<a href="#"><img class="img-rounded" src="../static/img/pie_visitors_mallS.png" alt="" height="342" width="auto"></a>
+					<!-- </div> -->
 				</div>
-
-				<div class="col-lg-4">
-					<div class="tilt">
-					<a href="#"><img src="../static/img/p02.png" alt=""></a>
-					</div>
-				</div>
+				<p>&nbsp</p>
+				
+				<h3 class="text-left">  4. How often do frequent visitors go to the mall? In Mall S, <b>64.2%</b> of frequent visitors appear at the mall exactly twice. In Mall G, only <b>47.9%</b> of frequent users are at the mall exactly twice, so users are nearly equally likely to go to mall G twice or more frequently. But some users visited the mall quite often in the two-week period: <b>74</b> users appeared at mall G over 10 times, while  <b>236</b> do so at mall S. This could be a hint into who works at each mall.  </h3>
+				<h3 class="text-left">  5. How much time do visitors spend at the mall? The median visit duration for Malls G and S are <b>1.1 hrs</b> and <b>1.6 hrs</b>, respectively. The average for Malls G and S is <b>1.4 hrs</b> and <b>1.9 hrs</b>. Because the mean is more strongly affected by outliers, we expect to see a right-skewed distribution of visit durations in both malls. </h3>
+				
+				<h3 class="text-left"> 6. How many events per trace are most typical? Between <b>2</b> and <b>10</b> events. In rare cases, traces have over <b>100</b> events.  </h3>
+						
+				<h3 class="text-left"> 7. Are there any users that visit both Malls? The users at Mall G and Mall S are different and must be treated independently. Even though <b> 418 </b> user IDs are present in both datasets, their residency zip codes don't match, and therefore we can't assume a connection between them. </h3>
+		
 			</div><!-- row -->
 		</div><!-- container -->
 	</div><!-- DG -->
@@ -41,53 +55,37 @@
 	<div class="container wb">
 		<div class="row centered">
 			<br><br>
-			<div class="col-lg-8 col-lg-offset-2">
-				<h4>WE CREATE FIRST CLASS DESIGN</h4>
-				<p>By being true to the brand we represent, we elevate the audiences’ relationship to it. Like becomes love becomes a passion. Passion becomes advocacy. And we see the brand blossom from within, creating a whole story the audience embraces. That’s when the brand can truly flex its muscles.</p>
-			<p><br/><br/></p>
+			<div class="col-lg-10 col-lg-offset-1">
+				<h2> WHEN DO USERS GO TO THE MALL?</h2>
+				<h3 class="text-left"> Instinctively, I would expect most people to go to the mall on Saturday. But what does the data say? </h3>
+				
 			</div>
 			<div class="col-lg-2"></div>
 			<div class="col-lg-10 col-lg-offset-1">
-				<img class="img-responsive" src="../static/img/munter.png" alt="">
+				<img class="img-responsive" src="../static/img/plot_daY_distrib.png" alt="">
 			</div>
+			
+			<div class="col-lg-10 col-lg-offset-1">
+			
+				<h3 class="text-left"> Indeed, Mall S has more clients on Saturday, but that that's not the case for Mall G. There, as many users visit the mall on Satuday as on any other day of the week, roughly speaking. </h3>
+				
+			</div>
+			
 		</div><!-- row -->
 	</div><!-- container -->
 
+	<!-- PORTFOLIO SECTION -->
+	<div id="dg">
+		<div class="container">
+			<div class="row centered">
+				<h2> BIASES</h2>
+				
+				<h3 class="text-left"> The data for mall G is smaller, we only have traces for one cell phone company. It's possible that the service is better in the area of the mall for this company. </h3>
+				
+			
 
-	<div id="lg">
-		<div class="container">
-			<div class="row centered">
-				<h4>OUR AWESOME CLIENTS</h4>
-				<div class="col-lg-2 col-lg-offset-1">
-					<img src="../static/img/c01.gif" alt="">
-				</div>
-				<div class="col-lg-2">
-					<img src="../static/img/c02.gif" alt="">
-				</div>
-				<div class="col-lg-2">
-					<img src="../static/img/c03.gif" alt="">
-				</div>
-				<div class="col-lg-2">
-					<img src="../static/img/c04.gif" alt="">
-				</div>
-				<div class="col-lg-2">
-					<img src="../static/img/c05.gif" alt="">
-				</div>
 			</div><!-- row -->
 		</div><!-- container -->
-	</div><!-- dg -->
-	
-	
-	<div id="r">
-		<div class="container">
-			<div class="row centered">
-				<div class="col-lg-8 col-lg-offset-2">
-					<h4>WE ARE STORYTELLERS. BRANDS ARE OUR SUBJECTS. DESIGN IS OUR VOICE.</h4>
-					<p>We believe ideas come from everyone, everywhere. At BlackTie, everyone within our agency walls is a designer in their own right. And there are a few principles we believe—and we believe everyone should believe—about our design craft. These truths drive us, motivate us, and ultimately help us redefine the power of design.</p>
-				</div>
-			</div><!-- row -->
-		</div><!-- container -->
-	</div><! -- r wrap -->
-	
+	</div><!-- DG -->
 	
 {% endblock %}

@@ -24,6 +24,14 @@ def index():
 @app.route("/basics")
 def basics():
     return render_template('basics.html')
+
+@app.route("/challenge")
+def challenge():
+    return render_template('challenge.html')
+    
+@app.route("/beyond")
+def beyond():
+    return render_template('beyond.html')
     
 if __name__ == "__main__":
     port = int(os.environ.get("PORT",5000))
