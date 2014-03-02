@@ -21,7 +21,7 @@ def page_not_found(e):
 def index():
     return render_template('index.html')
     
-@app.route("/basics")
+@app.route("/basics", methods=['GET', 'POST'])
 def basics():
     return render_template('basics.html')
 
