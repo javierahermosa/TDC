@@ -15,24 +15,32 @@
 		<div class="container">
 			<div class="row centered">
 				<h2> DATA CHALLENGE </h2>
-				<h3 class="text-left"> 1. Distribution of the visit durations</h3>
+				<h3 class="text-left"> <b>1. Distribution of the visit durations: </b> Most visitors go to malls G and S for about an hour, but the distributions are quite different. Figure 1 shows both density distributions, normed in order to facilitate the comparison.</h3>
 
-		<h3 class="text-left">  </h3>
 				<br>
-				<div class="col-lg-6">
+				<div class="col-lg-12">
 					<div>
-					<a href="#"><img class="img-rounded" src="#" alt="" height="342" width="auto"></a>
+					<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/duration_distrib.png') }}" alt="" height="580" width="auto"></a>
+					<p class="text-center"> <b>Figure 1:</b> Distribution of visit durations and basic statistics for Mall G and Mall S, using individual traces. </p>
 					</div>
 				</div>
+			
+		<h3 class="text-left"> The distributions for malls G and S appear to be log-normal and right-skewed with medians <b>1.13</b> and <b>1.61</b> and means <b>1.40</b> and <b>1.90</b>, respectively, showing that most users spend about an hour at the mall. However, the standard deviation and inter-quantile-range (IQR) of visit durations for Mall S is  broader than for Mall G, indicating that <b>there is a larger fraction of users that stay at Mall S longer</b>. The difference is more clearly seen after a visit duration of 2 hrs, where the number of visits drops sharply for mall G but falls off slowly for Mall S. 
+		</h3>
 
-				<div class="col-lg-6">
-					<!-- <div class="tilt"> -->
-					<a href="#"><img class="img-rounded" src="#" alt="" height="342" width="auto"></a>
-					<!-- </div> -->
-				</div>
-				<p>&nbsp</p>
-				
-	
+<h3 class="text-left"> Figure 2 (below) shows more clearly the breath of IQR in both distributions, and the 3-sigma outliers. The narrow IQR and long tail of the data for Mall G show that most visitors go there to carry out quick tasks lasting between <b>0.5</b> to <b>2 hrs</b>, whereas visitors that go to Mall S are more likely to stay longer. In fact, visitors that stay at Mall G for <b>4 hrs</b> or longer are 3-sigma outliers, while outliers at mall S stay for <b>5.5 hrs</b> or longer. We'll take another look at these "outliers" when we develop a model for finding employees. </h3>
+
+		<br>
+		<div class="col-lg-12">
+			<div>
+			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/duration_boxplots.png') }}" alt="" height="580" width="auto"></a>
+			<p class="text-center"> <b>Figure 2:</b> Boxplots of visit durations for Mall G and Mall S. The boxes represent the 25% and 75% quantiles of  the <br> distributions, and the whiskers reach the 1% and 99% quantiles on each side. Outliers are represented as circles.</p>
+			</div>
+		</div>
+		
+			 <h3 class="text-left">  <a href="{{ url_for('beyond') }}">Later</a>, we will see that most users go to Mall S preferrably at meal times (lunch and dinner), which may help explain why users that go to this mall stay longer.		 
+		</h3>
+		<h3 class="text-left"> <b>2. Distribution of the number of events: </b> 
 		
 			</div><!-- row -->
 		</div><!-- container -->
