@@ -20,7 +20,7 @@
 				<br>
 				<div class="col-lg-12">
 					<div>
-					<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/duration_distrib.png') }}" alt="" height="580" width="auto"></a>
+					<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/duration_distrib.png') }}" alt="" height="500" width="auto"></a>
 					<p class="text-center"> <b>Figure 1:</b> Distribution of visit durations and basic statistics for Mall G and Mall S, using individual traces. </p>
 					</div>
 				</div>
@@ -33,7 +33,7 @@
 		<br>
 		<div class="col-lg-12">
 			<div>
-			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/duration_boxplots.png') }}" alt="" height="580" width="auto"></a>
+			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/duration_boxplots.png') }}" alt="" height="500" width="auto"></a>
 			<p class="text-center"> <b>Figure 2:</b> Boxplots of visit durations for Mall G and Mall S. The boxes represent the 25% and 75% quantiles of  the <br> distributions, and the whiskers reach the 1% and 99% quantiles on each side. Outliers are represented as circles.</p>
 			</div>
 		</div>
@@ -45,7 +45,7 @@
 			<br>
 			<div class="col-lg-12">
 				<div>
-				<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/event_distrib.png') }}" alt="" height="580" width="auto"></a>
+				<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/event_distrib.png') }}" alt="" height="500" width="auto"></a>
 				<p class="text-center"> <b>Figure 3:</b> Distribution of the number of events and basic statistics for Mall G and Mall S, using individual traces. </br>The kernel density is shown as solid lines.</p>
 				</div>
 			</div>
@@ -57,7 +57,7 @@
 		<br>
 		<div class="col-lg-12">
 			<div>
-			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/events_boxplots.png') }}" alt="" height="580" width="auto"></a>
+			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/events_boxplots.png') }}" alt="" height="500" width="auto"></a>
 			<p class="text-center"> <b>Figure 4:</b> Boxplots whosing the distribution of the number of events and basic statistics for Mall G and Mall S, </br> using individual traces. Outliers are more clearly seen in each case.</p>
 			</div>
 		</div>
@@ -69,7 +69,7 @@
 		<br>
 		<div class="col-lg-12">
 			<div>
-			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/event_vs_duration.png') }}" alt="" height="580" width="auto"></a>
+			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/event_vs_duration.png') }}" alt="" height="500" width="auto"></a>
 			<p class="text-center"> <b>Figure 5:</b> Scatter plot of the visit duration vs. the number of events per trace for Mall G and Mall S.</p>
 			</div>
 		</div>
@@ -84,7 +84,7 @@
 			<a href="#"><img class="img-rounded" 
 				src="{{ url_for('static', filename='img/event_vs_time_bins.png') }}"
 				onmouseover="this.src='../static/img/event_vs_time_bins2.png'" 	  				  onmouseout="this.src='../static/img/event_vs_time_bins.png'" 
-				alt="" height="580" width="auto"></a>
+				alt="" height="500" width="auto"></a>
 	
 			<p class="text-center"> <b>Figure 6:</b> Plot of the number of events per hour at times when users goes to the mall.</p>
 			</div>
@@ -120,7 +120,7 @@
 				<div>
 				<a href="#"><img class="img-rounded" 
 				src="{{ url_for('static', filename='img/percent_unique.png') }}" 				 onmouseover="this.src='../static/img/percent_unique2.png'" 	  				  onmouseout="this.src='../static/img/percent_unique.png'" 
-				alt="" height="580" width="auto"></a>
+				alt="" height="500" width="auto"></a>
 				
 				<p class="text-center"> <b>Figure 8:</b> Percentage of unique 					visitors per day. Hoover over the image to see markers </p>
 				</div>
@@ -143,6 +143,8 @@
 					<!-- </div> -->
 				</div>
 					<p class="text-center"> <b>Figure 9:</b> Average percentage of unique visitors per week, for Mall G and Mall S. </p>
+					
+					
 			<h3 class="text-left"> The number of unique visits is now <b>85.2%</b> of mall G and <b>81.9%</b> for Mall S, larger than for unique daily visits. This makes sence, since users are more likely to return to the mall on a weekly basis rather than on a daily basis. The number of unique visits doesn't vary significantly from week 1 to week 2. In both malls, this difference is about <b>1%</b>. </h3>
 			
 			<h3 class="text-left"> <b>3. C. Frequency of visits for users that return to the mall each day:</b>  Now, we look at how many visitors appear at the mall twice a day or more frequenlty. </h3>
@@ -151,8 +153,8 @@
 			<br>
 			<div class="col-lg-12">
 				<div>
-				<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/frequency_visits_day.png') }}" alt="" height="580" width="auto"></a>
-				<p class="text-center"> <b>Figure 10: Frequency of visits per day for Malls G and S.</b> </p>
+				<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/frequency_visits_day.png') }}" alt="" height="500" width="auto"></a>
+				<p class="text-center"> <b>Figure 10:</b> Frequency of visits per day for Malls G and S. </p>
 				</div>
 			</div>
 			
@@ -163,24 +165,64 @@
 			<br>
 			<div class="col-lg-12">
 				<div>
-				<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/frequency_visits_week.png') }}" alt="" height="580" width="auto"></a>
-				<p class="text-center"> <b>Figure 11: Frequency of visits per week for Malls G and S.</b> </p>
+				<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/frequency_visits_week.png') }}" alt="" height="500" width="auto"></a>
+				<p class="text-center"> <b>Figure 11</b>: Frequency of visits per week for Malls G and S. </p>
 				</div>
 			</div>
 			
 			<h3 class="text-left"> In this case, the decline in frequency of the visits is also exponential, with most frequent users visiting the malls twice a week. As we saw on Figure 10, visitors can appear at the mall more than once per day, which explains why some weekly visitors are seen at the mall over 10 times per week. </h3>
 			
+		<h3 class="text-left"> <b>4. A model for finding employees:</b> We just saw that many frequent visitors appear at the mall several times per week, and also several times a day. Now the question is, who among these visitors are employees of the mall? We follow three criteria:</h3>
+<h3 class="text-left">		
+	<ul>
+	  <li>Employees appear at the mall at least <b>4 times a week</b> in average. </li>
+	  <li>Employees work at the mall at least <b>20 hours a week</b> in average.</li>
+	  <li>Employees have a characteristic schedule of working hours.</li>
+	</ul> 	
+</h3>	
+		<h3 class="text-left"> First, we focus on the first two criteria and we check the third later, because we don't want to bias our selection with employees that work from morning to evening  by rejecting night workers, such as security guards. We show the employee selection below: </h3>
+		
+		<br>
+		<div class="col-lg-6">
+			<div>
+			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/employees_MallG.png') }}" alt="" height="420" width="auto"></a>
+			</div>
+		</div>
+
+		<div class="col-lg-6">
+			<!-- <div class="tilt"> -->
+			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/employees_MallS.png') }}" alt="" height="420" width="auto"></a>
+			<!-- </div> -->
+		</div>
+			<p class="text-center"> <b>Figure 11:</b>Employee selection </p>
+			
+		<h3 class="text-left"> Most employees have a regular schedule, is this the case with the users we have identified as employees? Figure 12 shows the daily work schedule of the employees we found for each mall. </h3>
+		
+		<br>
+		<div class="col-lg-6">
+			<div>
+			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/schedule_MallG.png') }}" alt="" height="420" width="auto"></a>
+			</div>
+		</div>
+
+		<div class="col-lg-6">
+			<!-- <div class="tilt"> -->
+			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/schedule_MallS.png') }}" alt="" height="420" width="auto"></a>
+			<!-- </div> -->
+		</div>
+			<p class="text-center"> <b>Figure 12:</b> Daily work schedule for employees at Mall G and Mall S. The blue band is centered at the average start time of employees and its width represents is given by the standard deviation about this mean. Similarly, the red band is centered at the time when workers leave the mall. </p>
 			
 			
-			
-			
-			
-			
-			
+				<h3 class="text-left"> As we see in Figure 12 above, there is a pattern to the working schedule of the employees. In order to quantify this pattern, we look at the working schedule of individual employees at the mall. The start time of the working day is represented by a blue dot, and the time at which employees leave is represented by a red dot. There is clearly an overdensity of points at certain times, showing the regularity of the schedule of many workers. On order to show this quantitaviely, we average the daily mean time at which the employees arrive to the mall and the daily mean time at which employees leave the mall each day. The bands shown on the plot are centered at the mean and and span one standard deviation about this mean.   </h3>
+					
+					<h3 class="text-left"> The mean arrival time at Malls G and S is <b> 09:18 hrs</b> and <b>09:41 hrs</b>, respectively, and the mean time at which employees leave is <b>16:55 hrs</b> and <b>16:54 hrs</b>, respectively. This shows that the working schedule in both malls is quite similar. However, the spread in start and end times is larger for Mall S, since there are many employees that work irregular hours, i.e. they start late (<b>16:00 hrs</b>) and leave late (<b>22:00 hrs</b>). It is also interesting to note that some employees also appear to work on Sundays, perhaps on mantainance or security. </h3>
+				
+				
 			</div><!-- row -->
 		</div><!-- container -->
 	</div><!-- DG -->
 
+		
 
 	
 {% endblock %}
