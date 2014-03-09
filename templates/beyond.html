@@ -17,7 +17,7 @@
 				<h2> Beyond the Challenge - Further Insights </h2>
 				<h3 class="text-left"> The data is quite rich, and many interesting trends can be observed.</h3>
 				
-				<h3 class="text-left"> 1. <b>Residency Areas: </b>We begin by looking at the extra task of visualizing the residency areas of the visitors. </h3>
+				<h3 class="text-left"> <b>1. Residency Areas: </b>We begin by looking at the extra task of visualizing the residency areas of the visitors of Mall S. </h3>
 				
 					<div class="col-lg-12">
 				 <div id="visualization"></div>
@@ -29,11 +29,14 @@
 					<ul>
 					  <li> The central node (or root) is the most popular zipcode among the users, possibly the zipcode where the mall is located.  </li>
 					  <li> The secondary nodes are the most frequent zipcodes in each geographic area, and they are connected to the root. The numerical value of the zipcodes (for Mall S users) range from 2,000 - 2717. A scatter plot of these zipcodes shows that they are clustered in areas from 2,400 - 2,499, 2,500 - 2,599, etc. Therefore we assume that areas containing 100 zipcodes are geographically related.  </li>
-					  <li>The leaves (or terminal nodes) are the zipcodes in each geographical area, and they are connected to the secodary nodes.</li>
+					  <li>The leaves (or terminal nodes) are the rest of the zipcodes in each geographical area, and they are connected to the secodary nodes, i.e. the most popular zipcode in the area.</li>
 					</ul> 
+				As we can see from Figure 1, most of the mall atendees live in  areas where zipcodes range from 2,400 - 2,499, with 2410 being the most popular. This could correspond the location of Mall S, unless the residents of this area are particularly biased towards the cell phone company we are using the generate the traces.
+				
 				 </h3>
+				<h3 class="text-left">  <b>2. Where do employees live? </b>
 					
-				<h3 class="text-left"> 1. When do people go to the mall? Instinctively, I would expect most people to go to the mall on Saturday (and Sunday if the Malls were in the US). But what does the data say? Indeed, Mall S has more clients on Saturday, but that that's not the case for Mall G. There, as many users visit the mall on Satuday as on any other day of the week, roughly speaking. The number of events also correlates with time of day.</h3>
+				<h3 class="text-left">  <b>3. When do people go to the mall? </b> Instinctively, I would expect most people to go to the mall on Saturday (and Sunday if the Malls were in the US). But what does the data say? The plots below show the frequency with which users go to the mall as a function of the day of the week and time of the day.</h3>
 				
 				<br>
 				<div class="col-lg-6">
@@ -47,8 +50,13 @@
 					<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/plot_hour_distrib.png') }}" alt="" height="410" width="auto"></a>
 					<!-- </div> -->
 				</div>
-				<p>&nbsp</p>
+			<p><b>Figure 2.</b> Number of visitors per day of the week and time of the day. </p>
 
+<h3 class="text-left">  As expected, Mall S has more clients on Saturday, but that that's not the case for Mall G. There, as many users visit the mall on Satuday as on any other day of the week, roughly speaking. It would be advisable for the managers of Mall G to carry more activities on Saturday to attract more customers! </h3>
+
+<h3 class="text-left"> We also see that users don't go to the mall uniformly throughout the day. Most users, go to Mall G at lunch time (12:00 noon), but not many go after work. If fact, the number of users steadily declines after noon. This is not the case for Mall S, where the distribution of visitor times is bimodal. Mall G has two waves of visitors, at lunch time (12:00 noon) and at dinner time (18:00 hr). Possibly the food is good at Mall S! Certainly, users are more likely to go to Mall S after work than they do to Mall G. </h3>
+
+<h3 class="text-left">  <b>4. Who are the "night visitors"? </b>
 				
 			</div><!-- row -->
 		</div><!-- container -->
@@ -843,7 +851,7 @@
 	    .charge(-120)
 	    .linkDistance(30)
 	    .size([width, height]);
-
+			
 	var svg = d3.select("#visualization").append("svg")
 	    .attr("width", width)
 	    .attr("height", height);
