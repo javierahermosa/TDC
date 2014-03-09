@@ -17,12 +17,12 @@
 				<h2> Beyond the Challenge - Further Insights </h2>
 				<h3 class="text-left"> The data is quite rich, and many interesting trends can be observed.</h3>
 				
-				<h3 class="text-left"> <b>1. Residency Areas: </b>We begin by looking at the extra task of visualizing the residency areas of the visitors of Mall G. </h3>
+				<h3 class="text-left"> <b>1. Residency Areas: </b>We begin by looking at the extra task of visualizing the residency areas of the visitors of Mall G (you may need to reload the page to see the plot appear). </h3>
 				
 					<div class="col-lg-12">
 				 <div id="visualization"></div>
 				 	</div>
-					<p><b>Figure 1.</b> Force-directed visualization of the residency areas for the users of Mall G. The central node is the most common zipcode, </br>possibly where the mall is located. Only zipcodes with more than 2 residents are included. Hoover on a point to get its zipcode. If you don't see the visualization, refresh the page. </p>
+					<p><b>Figure 1.</b> Force-directed visualization of the residency areas for the users of Mall G. The central node is the most common zipcode, </br>possibly where the mall is located. Only zipcodes with more than 2 residents are included. Hoover on a point to get its zipcode. </p>
 					
 					
 				<h3 class="text-left"> The visualization above is a representation of the residency zipcodes of the Mall G users. The zipcodes do not correspond to real locations, so it is not possible to geocode them and place them in a map. Therefore, we focus on the fraction of users that live in each zipcode and the relationships between these locations. The graph is organized as follows:
@@ -43,7 +43,7 @@
 			 	</div>
 				<p><b>Figure 2.</b> Force-directed visualization of the residency areas for the users of Mall S. The central node is the most common zipcode, </br>possibly where the mall is located. Only zipcodes with more than 20 residents are included. Hoover on a point to get its zipcode. If you don't see the visualization, refresh the page. </p>
 				
-								<h3 class="text-left"> Using the same criteria for the rendering as for Mall G, we find that the central node, or most popular zipcode for Mall S customer is <b>694</b>, with <b>2,901</b> residents. This time, there are many populated areas, since the volume of customers to Mall S is much larger. As was the case with Mall G, most customers come to MallS from the area in the vicinity of the mall, with zipcodes ranging from 600-699.</h3>
+								<h3 class="text-left"> Using the same criteria for the rendering as for Mall G, we find that the central node, or most popular zipcode for Mall S customer is <b>694</b>, with <b>2,901</b> residents. This time, there are many populated areas, since the volume of customers to Mall S is much larger. As was the case with Mall G, most customers come to Mall S from the area in the vicinity of the mall, with zipcodes ranging from 600-699.</h3>
 				
 				<h3 class="text-left">  <b>2. Where do employees live? </b> Most employees of Mall G live in the area 2,400 - 2,499, and the dristribution of the rest of the employee zipcodes follows the trend of the general population. Similarly, most employees of Mall S live in the area with zipcodes ranging from 700 - 799, as do most of the people that go to this mall.
 					
@@ -63,9 +63,9 @@
 				</div>
 			<p><b>Figure .</b> Number of visitors per day of the week and time of the day. </p>
 
-<h3 class="text-left">  As expected, Mall S has more clients on Saturday, but that that's not the case for Mall G. There, as many users visit the mall on Satuday as on any other day of the week, roughly speaking. It would be advisable for the managers of Mall G to carry more activities on Saturday to attract more customers! </h3>
+<h3 class="text-left">  As expected, Mall S has more clients on Saturday, but that's not the case for Mall G. There, as many users visit the mall on Saturday as on any other day of the week, roughly speaking. It would be advisable for the managers of Mall G to carry out more activities on Saturday to attract more customers! </h3>
 
-<h3 class="text-left"> We also see that users don't go to the mall uniformly throughout the day. Most users, go to Mall G at lunch time (12:00 noon), but not many go after work. If fact, the number of users steadily declines after noon. This is not the case for Mall S, where the distribution of visitor times is bimodal. Mall G has two waves of visitors, at lunch time (12:00 noon) and at dinner time (18:00 hr). Possibly the food is good at Mall S! Certainly, users are more likely to go to Mall S after work than they do to Mall G. </h3>
+<h3 class="text-left"> We also see that users don't go to the mall uniformly throughout the day. Most users, go to Mall G at lunch time (12:00 noon), but not many go after work. If fact, the number of users steadily declines after noon. This is not the case for Mall S, where the distribution of visitor times is bimodal. Mall S has two waves of visitors, at lunch time (12:00 noon) and at dinner time (18:00 hr). Possibly the food is good at Mall S! Certainly, users are more likely to go to Mall S after work than they do to Mall G, so perhaps there is a movie theatre there as well, or kind another attraction. Interestingly, as we saw in the in the <a href="{{ url_for('challenge') }}">previous section</a>, there are is peak in the number of events in the evening, which could support the movie theatre idea, since that would encourage users to use their cell phones more often to cordinate encounters.</h3>
 
 <h3 class="text-left">  <b>4. Who are the "night visitors"? </b>As mentioned in the challenge description, we only have cell phone traces for the users and therefore we can't be certain that the users actually are customers of the mall. However, in the <a href="{{ url_for('challenge') }}">previous section</a>, we found that many of these visitors are possibly employees, since they appear at the mall at least 4 days a week and stay for over 20 hrs a week in average. Indeed, <b>4%</b> and <b>15%</b> of night visitors at Mall G and Mall S respectively were classified as employees. As for the rest, many appeared at the mall just once or twice.</h3>
 				
