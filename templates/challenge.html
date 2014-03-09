@@ -15,7 +15,7 @@
 		<div class="container">
 			<div class="row centered">
 				<h2> DATA CHALLENGE </h2>
-				<h3 class="text-left"> <b>1. Distribution of the visit durations: </b> Most visitors go to malls G and S for about an hour, but the distributions are quite different. Figure 1 shows both density distributions, normed in order to facilitate the comparison.</h3>
+				<h3 class="text-left"> <b>1. Distribution of the visit durations: </b> Most visitors go to the malls for about an hour, but the distributions of visit durations for Mall G and Mall S are quite different. Figure 1 shows both density distributions, normed in order to facilitate the comparison.</h3>
 
 				<br>
 				<div class="col-lg-12">
@@ -28,7 +28,7 @@
 		<h3 class="text-left"> The distributions for malls G and S appear to be log-normal and right-skewed with medians <b>1.13</b> and <b>1.61</b> and means <b>1.40</b> and <b>1.90</b>, respectively, showing that most users spend about an hour at the mall. However, the standard deviation and inter-quantile-range (IQR) of visit durations for Mall S is  broader than for Mall G, indicating that <b>there is a larger fraction of users that stay at Mall S longer</b>. The difference is more clearly seen after a visit duration of 2 hrs, where the number of visits drops sharply for Mall G but falls off slowly for Mall S. 
 		</h3>
 
-<h3 class="text-left"> Figure 2 (below) shows more clearly the breath of IQR in both distributions, and the 3-sigma outliers. The narrow IQR and long tail of the data for Mall G show that most visitors go there to carry out quick tasks lasting between <b>0.5</b> to <b>2 hrs</b>, whereas visitors that go to Mall S are more likely to stay longer. In fact, visitors that stay at Mall G for <b>4 hrs</b> or longer are 3-sigma outliers, while outliers at mall S stay for <b>5.5 hrs</b> or longer. We'll take another look at these "outliers" when we develop a model for finding employees. </h3>
+<h3 class="text-left"> Figure 2 (below) shows more clearly the breath of IQR in both distributions, and the 3-sigma outliers. The narrow IQR and long tail of the data show that most visitors go to Mall G to carry out quick tasks lasting between <b>0.5</b> to <b>2 hrs</b>, whereas visitors that go to Mall S are more likely to stay longer. In fact, visitors that stay at Mall G for <b>4 hrs</b> or longer are 3-sigma outliers, while outliers at mall S stay for <b>5.5 hrs</b> or longer. We'll take another look at these "outliers" when we develop a model for finding employees. </h3>
 
 		<br>
 		<div class="col-lg-12">
@@ -40,7 +40,7 @@
 		
 			 <h3 class="text-left">  <a href="{{ url_for('beyond') }}">Later</a>, we will see that most users go to Mall S preferrably at meal times (lunch and dinner), which may help explain why users that go to this mall stay longer.		 
 		</h3>
-		<h3 class="text-left"> <b>2. Distribution of the number of events: </b> The number of events varies quite wildly among the traces. Figure 3 below shows an extremely right-skewed distribution </h3> 
+		<h3 class="text-left"> <b>2. Distribution of the number of events: </b> The number of events varies quite wildly among traces. Figure 3 below shows an extremely right-skewed distribution of the number of events for Mall G and Mall S:</h3> 
 
 			<br>
 			<div class="col-lg-12">
@@ -50,7 +50,7 @@
 				</div>
 			</div>
 		
-		<h3 class="text-left"> The mode of each distribution shows that most traces contain <b>4</b> and <b>6</b> events at Malls G and S, respectively. Again, as with the distribution of the visit durations, the distribution of Mall G is highly peaked and rapidly declining, with narrow standard deviation and IQR. Instead, the distribution for Mall S is broader and the likelihood of having over 20 events is much higher.  </h3> 
+		<h3 class="text-left"> The mode of each distribution shows that most traces contain <b>4</b> and <b>6</b> events at Malls G and S, respectively. Again, as with the distribution of the visit durations, the distribution of Mall G is highly peaked and rapidly declining, with narrow standard deviation and IQR. Instead, the distribution for Mall S is broader and the likelihood of having over 20 events or more is higher.  </h3> 
 		<h3 class="text-left"> Because both distributions are strongly dominated by the high-event-number-tail, a boxplot is more appropiate to take a look at these 3-sigma outliers.</h3> 
 		
 		
@@ -62,9 +62,9 @@
 			</div>
 		</div>
 	
-		<h3 class="text-left"> The bulk of the user population has only between <b> 2</b> and <b>10</b> events per trace, but a handful of traces contain over <b>200</b> events for Mall G and over <b>600</b> events at mall S! </h3> 
+		<h3 class="text-left"> The bulk of the traces from our user population have only between <b> 2</b> and <b>10</b> events per trace, but a handful of traces contain over <b>200</b> events for Mall G and over <b>600</b> events at mall S! </h3> 
 		 
-		<h3 class="text-left"> Because more traces can be collected over a longer period of time, it is possible to especulate that there should be a positive correlation between visit duration and number of events. Support from this hypothesis comes from the fact that in general, more events are generated by users at Mall S, where users tend to stay longer. We take a look at that next. </h3> 
+		<h3 class="text-left"> Because more traces can be collected over a longer period of time, it is possible to especulate that there should be a positive correlation between visit duration and number of events. Support from this hypothesis comes from the fact that in general, more events are generated by users at Mall S, where users tend to stay longer. We take a look at that next. Figure 5 below shows a bubble plot of the number of events as a function of visit duration. We decided to show a scatter plot instead of a countour map because this way the outliers are more visible. </h3> 
 		
 		<br>
 		<div class="col-lg-12">
@@ -76,23 +76,23 @@
 		
 		<h3 class="text-left"> As we see in Figure 5, there is no obvious correlation between the visit duration and the number of events in a single trace. In mall G the trend seems to be opposite: visits of over four hours have generally fewer events. In Mall S we see the maximun number of event rising until the visit duration reaches about 4 hrs. After that, the number of events declines. </h3>
 		 
-		<h3 class="text-left"> Another possibility is that the the number of events correlates with the time of the day at which the user goes to the mall. To do this, we approximate the time as the start of the trace. Figure 6 below shows this trend. </h3> 
+		<h3 class="text-left"> Another possibility is that the the number of events correlates with the time of the day at which the user goes to the mall. To do this, we approximate the time of the day as the start of the trace. Again, we use a scatter plot in order to visualize all content in the data, without washing out outliers. Figure 6 below shows the results. </h3> 
+		
 		
 		<br>
 		<div class="col-lg-12">
 			<div>
 			<a href="#"><img class="img-rounded" 
-				src="{{ url_for('static', filename='img/event_vs_time_bins.png') }}"
-				onmouseover="this.src='../static/img/event_vs_time_bins2.png'" 	  				  onmouseout="this.src='../static/img/event_vs_time_bins.png'" 
+				src="{{ url_for('static', filename='img/event_vs_time.png') }}"
 				alt="" height="500" width="auto"></a>
 	
-			<p class="text-center"> <b>Figure 6:</b> Plot of the number of events per hour at times when users goes to the mall.</p>
+			<p class="text-center"> <b>Figure 6:</b> Scatter plot of the time of day vs. the number of events per trace for Mall G and Mall S at that time.</p>
 			</div>
 		</div>
 		
-		<h3 class="text-left"> Interestingly, the distribution of the number events throughout the day is not uniform. The distribution peaks at lunch time (around 12 noon) for Mall G and is bimodal for Mall S, with peaks at lunch time and dinner time (at around 12 noon and 6 pm). The reason for this, as we will see  <a href="{{ url_for('beyond') }}">later</a>, is that most people go to the malls at these times.  </h3> 
+		<h3 class="text-left"> Interestingly, the distribution of the number events throughout the day is not uniform. We see that traces that contain the largest number of events occur in the morning (<b>8 hrs</b>), at mid-day (<b>12 noon </b>), and in the evening (<b>20 hrs</b>) for Mall S.  <a href="{{ url_for('beyond') }}">Later</a> we will see that users tend to go to Mall S more frequently at meal times,  which gives users more time to user their cellphones. It is also possible to especulate that there is a movie theatre (or some other kind of attraction) at Mall S, and therefore people need to coordinate gatherings in the evening, more than they do at Mall G.</h3> 
 		
-		<h3 class="text-left"> <b>3. A. Percentage of unique visitors per day:</b> We define the percentage of unique visitors per day as the number of users who visit the mall once a day divided by the total number of users who visited the mall that day. Note that the total is not the total number of traces per day but the total number of unique ids per day. First, let's look at the average number of unique visitors per day at Malls G and S: </h3>
+		<h3 class="text-left"> <b>3. A. Percentage of unique visitors per day:</b> We define the percentage of unique visitors per day as the number of users who visit the mall once a day divided by the total number of users who visited the mall that day. Note that the total number of users is not the total number of traces per day but the total number of unique user ids per day. First, let's look at the average number of unique visitors per day at Malls G and S: </h3>
 
 	
 		<br>
@@ -109,9 +109,9 @@
 		</div>
 			<p class="text-center"> <b>Figure 7:</b> Average percentage of unique 					visitors per day, including rare Sunday visits, for Mall G and Mall S. </p>
 	
-		<h3 class="text-left"> We find that <b>89.2%</b> of users at Mall G and <b>90.0%</b> of users at Mall S visit each mall once per day, and therefore only about <b>10%</b> of users visit the mall more often. In calculating this average, we included the unique visits on Sundays, but we focus only on work days we find a small decrease in the percentage of unique visitors, to <b>88.2%</b> for Mall G and  <b>88.9%</b> for mall S.  It is actually surprising that roughly <b>10%</b> of users return to the mall on a single day. Many of these users may be employees of the mall.  </h3>
+		<h3 class="text-left"> We find that <b>89.2%</b> of users at Mall G and <b>90.0%</b> of users at Mall S visit each mall once per day, and therefore only about <b>10%</b> of users visit the mall more often. In calculating this average, we included the unique visits on Sundays, but if we just focus on work days we find only a small decrease in the percentage of unique visitors, to <b>88.2%</b> for Mall G and  <b>88.9%</b> for mall S.  It is actually surprising that roughly <b>10%</b> of users return to the mall on a single day. Many of these users may be employees of the mall.  </h3>
 			
-			<h3 class="text-left"> As we found  <a href="{{ url_for('basics') }}">earlier</a>, there is a smaller number of unique visitors per day than unique visitors over the entire two-week period. This is because many users return to the malls over a time span of two-weeks, but very few have several traces on one day.</h3>
+			<h3 class="text-left"> Naturally, there is a smaller number of unique visitors per day than unique visitors over the entire two-week period, as we found  <a href="{{ url_for('basics') }}">earlier</a>. This is because many users return to the malls over a time span of two-weeks, but very few have several traces on a single day.</h3>
 		
 			<h3 class="text-left"> It can be instructive to look at the percentage of unique visits for each day individually. This is shown in Figure 8 below.</h3>
 		
@@ -126,7 +126,7 @@
 				</div>
 			</div>
 	
-				<h3 class="text-left"> The percentage of unique visitors varies from day to day. What is interesting is that Mall G receives more unique visitors on Saturday than Mall S, with a <b>10%</b> increase from the average working day. More data (over a longer period of time) would help determine whether the increase in unique visitors is significant. If true, then users are more likely to return to the mall on weekdays. Possible explanations for this are that more employees work on weekdays than on Saturdays, or that many users have both lunch and dinner at the mall. We will take a closer look at these alternatives later. </h3>
+				<h3 class="text-left"> The percentage of unique visitors varies from day to day. What is interesting is that Mall G receives more unique visitors on Saturday than Mall S, with a <b>10%</b> increase from the average working day. More data (over a longer period of time) would help determine whether the increase in unique visitors on Saturdays is significant. If true, then users are more likely to return to the mall on weekdays. Possible explanations for this are that more employees work on weekdays than on Saturdays, or that many users have both lunch and dinner at the mall. We will take a closer look at these alternatives later. </h3>
 			
 			<h3 class="text-left"> <b>3. B. Percentage of unique visitors per week:</b> We define the percentage of unique visitors per week as the fraction of users that went to the mall once. Again, the total number of users is the number of unique visitor IDs in a week, not the total number of traces. The average percetages of unique visitors for Mall G and Mall S are shown below: </h3> 
 
@@ -145,9 +145,9 @@
 					<p class="text-center"> <b>Figure 9:</b> Average percentage of unique visitors per week, for Mall G and Mall S. </p>
 					
 					
-			<h3 class="text-left"> The number of unique visits is now <b>85.2%</b> of mall G and <b>81.9%</b> for Mall S, larger than for unique daily visits. This makes sence, since users are more likely to return to the mall on a weekly basis rather than on a daily basis. The number of unique visits doesn't vary significantly from week 1 to week 2. In both malls, this difference is about <b>1%</b>. </h3>
+			<h3 class="text-left"> The number of unique visits is now <b>85.2%</b> of Mall G and <b>81.9%</b> for Mall S, larger than for unique daily visits. This makes sence, since users are more likely to return to the mall on a weekly basis rather than on a daily basis. The number of unique visits doesn't vary significantly from week 1 to week 2. In both malls, this difference is about <b>1%</b>. </h3>
 			
-			<h3 class="text-left"> <b>3. C. Frequency of visits for users that return to the mall each day:</b>  Now, we look at how many visitors appear at the mall twice a day or more frequenlty. </h3>
+			<h3 class="text-left"> <b>3. C. Frequency of visits for users that return to the mall each day:</b>  Now, we look at how many visitors appear at the mall twice a day or more frequently. </h3>
 			
 			
 			<br>
@@ -175,12 +175,12 @@
 		<h3 class="text-left"> <b>4. A model for finding employees:</b> We just saw that many frequent visitors appear at the mall several times per week, and also several times a day. Now the question is, who among these visitors are employees of the mall? We follow three criteria:</h3>
 <h3 class="text-left">		
 	<ul>
-	  <li>Employees appear at the mall at least <b>4 times a week</b> in average. </li>
+	  <li>Employees work at the mall at least <b>4 times a week</b> in average. </li>
 	  <li>Employees work at the mall at least <b>20 hours a week</b> in average.</li>
 	  <li>Employees have a characteristic schedule of working hours.</li>
 	</ul> 	
 </h3>	
-		<h3 class="text-left"> First, we focus on the first two criteria and we check the third later, because we don't want to bias our selection with employees that work from morning to evening  by rejecting night workers, such as security guards. We show the employee selection below: </h3>
+		<h3 class="text-left"> First, we focus on the first two criteria and we check the third later, because we don't want to bias our selection with employees that work from morning to evening  by rejecting night workers, such as security guards and cleaning crews. It is important to note that the total stay of users at the mall does not exactly match their total visit duration, as obtained from the cell phone data, because events are not necessarily recorded at the exact time when the user enters or leaves the mall. Figure 11 shows the employee selection, based on the average number of days and average number of hours they work per week: </h3>
 		
 		<br>
 		<div class="col-lg-6">
@@ -194,9 +194,11 @@
 			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/employees_MallS.png') }}" alt="" height="420" width="auto"></a>
 			<!-- </div> -->
 		</div>
-			<p class="text-center"> <b>Figure 11:</b>Employee selection </p>
+			<p class="text-center"> <b>Figure 11:</b> Employee selection based on the number of hours and number of days spent by the users at the malls per week.  </p>
 			
-		<h3 class="text-left"> Most employees have a regular schedule, is this the case with the users we have identified as employees? Figure 12 shows the daily work schedule of the employees we found for each mall. </h3>
+		<h3 class="text-left"> Using these rough selection criteria, we find that the percentage of frequent visitors who are employees is <b> 2.0%</b> at Mall G and <b>5.4%</b> at Mall S. Note that this model neglects employees that work only a few hours a week at the mall, as these users are indistinguishable from regular visitors. However, the users we selected, are very solid candidates to be employees, based on their regular daily work schedule, as we study next.</h3>
+		
+			<h3 class="text-left">Most employees have a regular work schedule, is this the case with the users we have identified as employees? Figure 12 shows the daily work schedule of the employees we found for each mall.  </h3>
 		
 		<br>
 		<div class="col-lg-6">
@@ -213,9 +215,10 @@
 			<p class="text-center"> <b>Figure 12:</b> Daily work schedule for employees at Mall G and Mall S. The blue band is centered at the average start time of employees and its width represents is given by the standard deviation about this mean. Similarly, the red band is centered at the time when workers leave the mall. </p>
 			
 			
-				<h3 class="text-left"> As we see in Figure 12 above, there is a pattern to the working schedule of the employees. In order to quantify this pattern, we look at the working schedule of individual employees at the mall. The start time of the working day is represented by a blue dot, and the time at which employees leave is represented by a red dot. There is clearly an overdensity of points at certain times, showing the regularity of the schedule of many workers. On order to show this quantitaviely, we average the daily mean time at which the employees arrive to the mall and the daily mean time at which employees leave the mall each day. The bands shown on the plot are centered at the mean and and span one standard deviation about this mean.   </h3>
+				<h3 class="text-left"> In figure 12, each employee is represented by two point each day: a blue dot shows the time at which the shift started and a red dot shows the time at which the shift ended. The start and end times are represented by the first and last trace of the day for each employee. There is a clear pattern to this data: <b>employees have a regular schedule</b>. To quantify this pattern, we calculate the average time at which employees start work and leave work each day. Then, we average these daily means and obtain a weekly average and the standard deviation. The horizontal bands shown in the plot represent these weekly means +/- the standard deviations for the start (blue) and end (red) work times. 
+			 </h3>
 					
-					<h3 class="text-left"> The mean arrival time at Malls G and S is <b> 09:18 hrs</b> and <b>09:41 hrs</b>, respectively, and the mean time at which employees leave is <b>16:55 hrs</b> and <b>16:54 hrs</b>, respectively. This shows that the working schedule in both malls is quite similar. However, the spread in start and end times is larger for Mall S, since there are many employees that work irregular hours, i.e. they start late (<b>16:00 hrs</b>) and leave late (<b>22:00 hrs</b>). It is also interesting to note that some employees also appear to work on Sundays, perhaps on mantainance or security. </h3>
+					<h3 class="text-left"> The mean arrival time of employees at Mall G and Mall S is <b> 09:18 hrs</b> and <b>09:41 hrs</b>, respectively, and the mean time at which employees leave is <b>16:55 hrs</b> and <b>16:54 hrs</b>, respectively. This shows that the working schedule in both malls is quite similar. However, the spread in start and end times is larger for Mall S, since there are many employees that work irregular hours, i.e. they start late (<b>16:00 hrs</b>) and leave late (<b>22:00 hrs</b>). It is also interesting to note that some employees also appear to work on Sundays, perhaps on maintenance or security. </h3>
 				
 				
 			</div><!-- row -->
