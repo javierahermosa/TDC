@@ -8,7 +8,9 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../static/ico/leaf.ico">
  
-    <title>Teralytics Data Challenge - Javiera Guedes {% block title %}{% endblock %}</title>
+    <title>Teralytics Data Challenge - Javiera Guedes 
+		   {% block title %}{% endblock %}
+	</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../static/css/bootstrap.css" rel="stylesheet">
@@ -19,39 +21,9 @@
 	<link href="../static/css/my.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
 	 rel="stylesheet"> 
-	 
-     <style type="text/css">
- circle.node {
-   cursor: pointer;
-   stroke: #000;
-   stroke-width: .5px;
- }
-
- circle.node.directory {
-   stroke: #9ecae1;
-   stroke-width: 2px;
- }
-
- circle.node.collapsed {
-   stroke: #555;
- }
-
- .nodetext {
-   fill: #252929;
-   font-weight: bold;
-   text-shadow: 0 0 0.2em white;
- }
-
- line.link {
-   fill: none;
-   stroke: #9ecae1;
-   stroke-width: 1.5px;
- }
-     </style>
   </head>
 
   <body>
-
     <!-- Fixed navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -69,15 +41,15 @@
 			{% block menu %}
 
 			{% endblock %}
-            <li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i class="fa fa-envelope-o"></i></a></li>
+            <li><a data-toggle="modal" data-target="#myModal" href="#myModal">CONTACT</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
 
 {% block content %}
-{% endblock %}
 
+{% endblock %}
 	
 <div id="r">
 	<div class="container">
@@ -118,7 +90,8 @@
 	
 		        <div class="row centered">
 
-					<img class="img-circle" width="140" height="auto" alt="" src="{{ url_for('static', filename='img/jg.jpg') }}" ></img>
+					<img class="img-circle" width="140" height="auto" alt="" 
+					     src="{{ url_for('static', filename='img/jg.jpg') }}" ></img>
 				
 		        	<h2>Javiera Guedes</h2>
 		        	<p>
@@ -130,7 +103,7 @@
 		        </div>
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-danger" data-dismiss="modal">Got it</button>
+	        <button type="button" class="btn btn-danger" data-dismiss="modal">Got it!</button>
 	      </div>
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
@@ -139,7 +112,6 @@
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
 	

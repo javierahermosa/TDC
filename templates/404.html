@@ -1,5 +1,16 @@
+{% extends "base.html" %}
+{% block title %} - 404 {% endblock %}
 
+{% block menu %}
+<li><a href="{{ url_for('index') }}">HOME</a></li>
+<li class="active"><a href="{{ url_for('basics') }}">BASICS</a></li>
+<li><a href="{{ url_for('challenge') }}">CHALLENGE</a></li>
+<li><a href="{{ url_for('beyond') }}">BEYOND</a></li>
+{% endblock %}
 
+{% block content %}
+</br>
 <h3> Oops, you got an error: 404.</h3>
-
+</br>
+{%  endblock %}
 	  

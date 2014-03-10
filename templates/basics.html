@@ -1,12 +1,11 @@
 {% extends "base.html" %}
-{% block headtitle %} - Basics{% endblock %}
+{% block title %} - Basics {% endblock %}
 
 {% block menu %}
 <li><a href="{{ url_for('index') }}">HOME</a></li>
 <li class="active"><a href="{{ url_for('basics') }}">BASICS</a></li>
 <li><a href="{{ url_for('challenge') }}">CHALLENGE</a></li>
 <li><a href="{{ url_for('beyond') }}">BEYOND</a></li>
-<li><a href="#">ABOUT</a></li>
 {% endblock %}
 
 {% block content %}

@@ -1,16 +1,14 @@
 {% extends "base.html" %}
-{% block headtitle %} - Home{% endblock %}
+{% block title %} - Challenge {% endblock %}
 
 {% block menu %}
 <li><a href="{{ url_for('index') }}">HOME</a></li>
 <li><a href="{{ url_for('basics') }}">BASICS</a></li>
 <li class="active"><a href="{{ url_for('challenge') }}">CHALLENGE</a></li>
 <li><a href="{{ url_for('beyond') }}">BEYOND</a></li>
-<li><a href="#">ABOUT</a></li>
 {% endblock %}
 
 {% block content %}
-	<!-- PORTFOLIO SECTION -->
 	<div id="dg">
 		<div class="container">
 			<div class="row centered">
@@ -20,7 +18,10 @@
 				<br>
 				<div class="col-lg-12">
 					<div>
-					<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/duration_distrib.png') }}" alt="" height="500" width="auto"></a>
+					<a href="{{ url_for('static', filename='img/duration_distrib.png') }}">
+						<img class="img-rounded" alt="" height="500" width="auto"
+						src="{{ url_for('static', filename='img/duration_distrib.png') }}">
+					</a>
 					<p class="text-center"> <b>Figure 1:</b> Distribution of visit durations and basic statistics for Mall G and Mall S, using individual traces. </p>
 					</div>
 				</div>
@@ -33,7 +34,10 @@
 		<br>
 		<div class="col-lg-12">
 			<div>
-			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/duration_boxplots.png') }}" alt="" height="500" width="auto"></a>
+			<a href="{{ url_for('static', filename='img/duration_boxplots.png') }}">
+				<img class="img-rounded" alt="" height="500" width="auto"
+				src="{{ url_for('static', filename='img/duration_boxplots.png') }}">
+			</a>
 			<p class="text-center"> <b>Figure 2:</b> Boxplots of visit durations for Mall G and Mall S. The boxes represent the 25% and 75% quantiles of  the <br> distributions, and the whiskers reach the 1% and 99% quantiles on each side. Outliers are represented as circles.</p>
 			</div>
 		</div>
@@ -45,7 +49,10 @@
 			<br>
 			<div class="col-lg-12">
 				<div>
-				<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/event_distrib.png') }}" alt="" height="500" width="auto"></a>
+				<a href="{{ url_for('static', filename='img/event_distrib.png') }}">
+					<img class="img-rounded" alt="" height="500" width="auto"
+					src="{{ url_for('static', filename='img/event_distrib.png') }}">
+				</a>
 				<p class="text-center"> <b>Figure 3:</b> Distribution of the number of events and basic statistics for Mall G and Mall S, using individual traces. </br>The kernel density is shown as solid lines.</p>
 				</div>
 			</div>
@@ -57,7 +64,10 @@
 		<br>
 		<div class="col-lg-12">
 			<div>
-			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/events_boxplots.png') }}" alt="" height="500" width="auto"></a>
+			<a href="{{ url_for('static', filename='img/events_boxplots.png') }}">
+				<img class="img-rounded" alt="" height="500" width="auto"
+				src="{{ url_for('static', filename='img/events_boxplots.png') }}">
+			</a>
 			<p class="text-center"> <b>Figure 4:</b> Boxplots whosing the distribution of the number of events and basic statistics for Mall G and Mall S, </br> using individual traces. Outliers are more clearly seen in each case.</p>
 			</div>
 		</div>
@@ -69,7 +79,10 @@
 		<br>
 		<div class="col-lg-12">
 			<div>
-			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/event_vs_duration.png') }}" alt="" height="500" width="auto"></a>
+			<a href="{{ url_for('static', filename='img/event_vs_duration.png') }}">
+				<img class="img-rounded" alt="" height="500" width="auto" 
+				src="{{ url_for('static', filename='img/event_vs_duration.png') }}">
+			</a>
 			<p class="text-center"> <b>Figure 5:</b> Scatter plot of the visit duration vs. the number of events per trace for Mall G and Mall S.</p>
 			</div>
 		</div>
@@ -77,15 +90,14 @@
 		<h3 class="text-left"> As we see in Figure 5, there is no obvious correlation between the visit duration and the number of events in a single trace. In Mall G the trend seems to be opposite: visits of over four hours have generally fewer events. In Mall S we see the maximun number of event rising until the visit duration reaches about 4 hrs. After that, the number of events declines. </h3>
 		 
 		<h3 class="text-left"> Another possibility is that the the number of events correlates with the time of the day at which the user goes to the mall. To do this, we approximate the time of the day as the start of the trace. Again, we use a scatter plot in order to visualize all content in the data, without washing out outliers. Figure 6 below shows the results. </h3> 
-		
-		
+			
 		<br>
 		<div class="col-lg-12">
 			<div>
-			<a href="#"><img class="img-rounded" 
-				src="{{ url_for('static', filename='img/event_vs_time.png') }}"
-				alt="" height="500" width="auto"></a>
-	
+			<a href="{{ url_for('static', filename='img/event_vs_time.png')  }}">
+				<img class="img-rounded" alt="" height="500" width="auto"
+				src="{{ url_for('static', filename='img/event_vs_time.png')  }}">
+			</a>
 			<p class="text-center"> <b>Figure 6:</b> Scatter plot of the time of day vs. the number of events per trace for Mall G and Mall S at that time.</p>
 			</div>
 		</div>
@@ -93,19 +105,22 @@
 		<h3 class="text-left"> Interestingly, the distribution of the number events throughout the day is not uniform. We see that traces that contain the largest number of events occur in the morning (<b>8 hrs</b>), at mid-day (<b>12 noon </b>), and in the evening (<b>20 hrs</b>) for Mall S.  <a href="{{ url_for('beyond') }}">Later</a> we will see that users tend to go to Mall S more frequently at meal times, which gives users more time to use their cellphones. It is also possible to especulate that there is a movie theatre (or some other kind of attraction) at Mall S, and therefore people need to coordinate gatherings in the evening, more than they do at Mall G.</h3> 
 		
 		<h3 class="text-left"> <b>3. A. Percentage of unique visitors per day:</b> We define the percentage of unique visitors per day as the number of users who visit the mall once a day divided by the total number of users who visited the mall that day. Note that the total number of users is not the total number of traces per day but the total number of unique user ids per day. First, let's look at the average number of unique visitors per day at Malls G and S: </h3>
-
 	
 		<br>
 		<div class="col-lg-6">
 			<div>
-			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/pie_visitors_MallG_per_day.png') }}" alt="" height="342" width="auto"></a>
+			<a href="{{ url_for('static', filename='img/pie_visitors_MallG_per_day.png') }}">
+				<img class="img-rounded" alt="" height="342" width="auto" 
+				src="{{ url_for('static', filename='img/pie_visitors_MallG_per_day.png') }}">
+			</a>
 			</div>
 		</div>
 
 		<div class="col-lg-6">
-			<!-- <div class="tilt"> -->
-			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/pie_visitors_MallS_per_day.png') }}" alt="" height="342" width="auto"></a>
-			<!-- </div> -->
+			<a href="{{ url_for('static', filename='img/pie_visitors_MallS_per_day.png') }}">
+				<img class="img-rounded" alt="" height="342" width="auto" 
+				src="{{ url_for('static', filename='img/pie_visitors_MallS_per_day.png') }}">
+			</a>
 		</div>
 			<p class="text-center"> <b>Figure 7:</b> Average percentage of unique 					visitors per day, including rare Sunday visits, for Mall G and Mall S. </p>
 	
@@ -118,10 +133,10 @@
 			<br>
 			<div class="col-lg-12">
 				<div>
-				<a href="#"><img class="img-rounded" 
-				src="{{ url_for('static', filename='img/percent_unique.png') }}" 				 onmouseover="this.src='../static/img/percent_unique2.png'" 	  				  onmouseout="this.src='../static/img/percent_unique.png'" 
-				alt="" height="500" width="auto"></a>
-				
+				<a href="{{ url_for('static', filename='img/percent_unique2.png') }}">
+					<img class="img-rounded" alt="" height="500" width="auto"
+					src="{{ url_for('static', filename='img/percent_unique.png') }}" 				 				 	 onmouseover="this.src='../static/img/percent_unique2.png'" 	  				  				      onmouseout="this.src='../static/img/percent_unique.png'">
+			    </a>		
 				<p class="text-center"> <b>Figure 8:</b> Percentage of unique 					visitors per day. Hoover over the image to see markers </p>
 				</div>
 			</div>
@@ -133,13 +148,19 @@
 				<br>
 				<div class="col-lg-6">
 					<div>
-					<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/pie_visitors_MallG_per_week.png') }}" alt="" height="342" width="auto"></a>
+					<a href="{{ url_for('static', filename='img/pie_visitors_MallG_per_week.png') }}">
+						<img class="img-rounded" alt="" height="342" width="auto" 
+						src="{{ url_for('static', filename='img/pie_visitors_MallG_per_week.png') }}">
+					</a>
 					</div>
 				</div>
 
 				<div class="col-lg-6">
 					<!-- <div class="tilt"> -->
-					<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/pie_visitors_MallS_per_week.png') }}" alt="" height="342" width="auto"></a>
+					<a href="{{ url_for('static', filename='img/pie_visitors_MallS_per_week.png') }}">
+						<img class="img-rounded" alt="" height="342" width="auto"
+						src="{{ url_for('static', filename='img/pie_visitors_MallS_per_week.png') }}">
+					</a>
 					<!-- </div> -->
 				</div>
 					<p class="text-center"> <b>Figure 9:</b> Average percentage of unique visitors per week, for Mall G and Mall S. </p>
@@ -153,20 +174,26 @@
 			<br>
 			<div class="col-lg-12">
 				<div>
-				<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/frequency_visits_day.png') }}" alt="" height="500" width="auto"></a>
+				<a href="{{ url_for('static', filename='img/frequency_visits_day.png') }}">
+					<img class="img-rounded"  alt="" height="500" width="auto" 
+					src="{{ url_for('static', filename='img/frequency_visits_day.png') }}">
+				</a>
 				<p class="text-center"> <b>Figure 10:</b> Frequency of visits per day for Malls G and S. </p>
 				</div>
 			</div>
 			
-			<h3 class="text-left"> Most frequent visitors appear at the mall twice a day, but a larger fraction of users go to Mall G more frequently that frequent visitors of Mall S. The frequency of visits in a single day declines exponentially, with only a handful of users going to the mall over 6 times and none over 7 times. </h3>
+			<h3 class="text-left"> Most frequent visitors appear at the mall twice a day, but a larger fraction of users go to Mall G more times a day than visitors of Mall S. The frequency of visits in a single day declines exponentially, with only a handful of users going to the mall over 6 times and none over 7 times. </h3>
 			
 			<h3 class="text-left"> <b>3. D. Frequency of visits for users that return to the mall each week:</b> It is also interesting to see how many times users go to the mall in a week. Figure 11 shows normalized histograms comparing the frequent visits at Mall G and S:</h3> 
 			
 			<br>
 			<div class="col-lg-12">
 				<div>
-				<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/frequency_visits_week.png') }}" alt="" height="500" width="auto"></a>
-				<p class="text-center"> <b>Figure 11</b>: Frequency of visits per week for Malls G and S. </p>
+				<a href="{{ url_for('static', filename='img/frequency_visits_week.png') }}">
+					<img class="img-rounded" alt="" height="500" width="auto" 
+					src="{{ url_for('static', filename='img/frequency_visits_week.png') }}">
+				</a>
+				<p class="text-center"> <b>Figure 11</b>: Frequency of visits per week for Malls G and S.</p>
 				</div>
 			</div>
 			
@@ -185,14 +212,18 @@
 		<br>
 		<div class="col-lg-6">
 			<div>
-			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/employees_MallG.png') }}" alt="" height="420" width="auto"></a>
+			<a href="{{ url_for('static', filename='img/employees_MallG.png') }}">
+				<img class="img-rounded"  alt="" height="420" width="auto" 
+				src="{{ url_for('static', filename='img/employees_MallG.png') }}">
+			</a>
 			</div>
 		</div>
 
 		<div class="col-lg-6">
-			<!-- <div class="tilt"> -->
-			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/employees_MallS.png') }}" alt="" height="420" width="auto"></a>
-			<!-- </div> -->
+			<a href="{{ url_for('static', filename='img/employees_MallS.png') }}">
+				<img class="img-rounded" alt="" height="420" width="auto" 
+				src="{{ url_for('static', filename='img/employees_MallS.png') }}">
+			</a>
 		</div>
 			<p class="text-center"> <b>Figure 11:</b> Employee selection based on the number of hours and number of days spent by the users at the malls per week.  </p>
 			
@@ -203,18 +234,21 @@
 		<br>
 		<div class="col-lg-6">
 			<div>
-			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/schedule_MallG.png') }}" alt="" height="420" width="auto"></a>
+			<a href="{{ url_for('static', filename='img/schedule_MallG.png') }}">
+				<img class="img-rounded" alt="" height="420" width="auto"
+				src="{{ url_for('static', filename='img/schedule_MallG.png') }}">
+			</a>
 			</div>
 		</div>
 
 		<div class="col-lg-6">
-			<!-- <div class="tilt"> -->
-			<a href="#"><img class="img-rounded" src="{{ url_for('static', filename='img/schedule_MallS.png') }}" alt="" height="420" width="auto"></a>
-			<!-- </div> -->
+			<a href="{{ url_for('static', filename='img/schedule_MallS.png') }}">
+				<img class="img-rounded"  alt="" height="420" width="auto" 
+				src="{{ url_for('static', filename='img/schedule_MallS.png') }}">
+			</a>
 		</div>
 			<p class="text-center"> <b>Figure 12:</b> Daily work schedule for employees at Mall G and Mall S. The blue band is centered at the average start time of employees and its width represents is given by the standard deviation about this mean. Similarly, the red band is centered at the time when workers leave the mall. </p>
-			
-			
+				
 				<h3 class="text-left"> In figure 12, each employee is represented by two point each day: a blue dot shows the time at which the shift started and a red dot shows the time at which the shift ended. The start and end times are represented by the first and last trace of the day for each employee. There is a clear pattern to this data: <b>employees have a regular schedule</b>. To quantify this pattern, we calculate the average time at which employees start work and leave work each day. Then, we average these daily means and obtain a weekly average and the standard deviation. The horizontal bands shown in the plot represent these weekly means +/- the standard deviations for the start (blue) and end (red) work times. 
 			 </h3>
 					

@@ -1,12 +1,11 @@
 {% extends "base.html" %}
-{% block headtitle %} - Home{% endblock %}
+{% block title %} - Home {% endblock %}
 
 {% block menu %}
 <li class="active"><a href="{{ url_for('index') }}">HOME</a></li>
 <li><a href="{{ url_for('basics') }}">BASICS</a></li>
  <li><a href="{{ url_for('challenge') }}">CHALLENGE</a></li>
  <li><a href="{{ url_for('beyond') }}">BEYOND</a></li>
-<li><a href="#">ABOUT</a></li>
 {% endblock %}
 
 {% block content %}
@@ -35,7 +34,7 @@
 			<div class="col-lg-4">
 				<i class="fa fa-bolt"></i>
 				<h4>INSIGHTS</h4>
-				<p>The goal of this challenge is to show a quantitative and descriptive analysis of the cell phone data in order to turn data insights into actionable items, e.g. the managers of Mall G should have fun <b>activities on Saturdays! </b> </p>
+				<p>The goal of this challenge is to show a quantitative and descriptive analysis of the cell phone data in order to turn data insights into actionable items, e.g. the managers of Mall G should have <b> more fun activities on Saturdays! </b> </p>
 			</div><!-- col-lg-4 -->
 
 			<div class="col-lg-4">
@@ -47,16 +46,5 @@
 		<br>
 		<br>
 	</div><!-- container -->
-
-	<!-- <div id="r">
-		<div class="container">
-			<div class="row centered">
-				<div class="col-lg-8 col-lg-offset-2">
-					<h4></h4>
-					<p></p>
-				</div>
-			</div>
-		 </div>
-</div> -->
 
 {% endblock %}
