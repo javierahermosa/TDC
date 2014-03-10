@@ -593,6 +593,10 @@ a:after {
 	font-weight: 700;
 }
 
+#dg h3 {
+	font-size: 22px;
+}
+
 /* Light Grey */
 #lg {
 	background: #ebebeb;

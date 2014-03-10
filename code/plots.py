@@ -276,7 +276,7 @@ def plot_employees(fv, se, label):
     ax.set_axisbelow(True)
     plt.savefig(img_dir+'employees_'+label.replace(" ",'')+'.png', format="png", dpi=500)
     
-      
+# Challenge Figure 12      
 def plot_daily_schedule(df, se, label):
     
     n = se.values()
