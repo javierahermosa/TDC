@@ -114,39 +114,3 @@ dinner_cineS = [c for c in cineS_ids if c in dinnerS_ids]
 
 print 100.* len(dinner_cineG)/len(cineG_ids)
 print 100.* len(dinner_cineS)/len(cineS_ids)
-#  
-# def find_employees(df, ids):
-#     fv = {}
-#     se = {}
-#     for fid in ids:
-#          aa = df[df['uid']== fid].groupby(['date']).agg({"duration": lambda x: x.sum()})
-#          v_date = aa.index
-#          ndays = len(v_date)/2.
-#          v_duration = sum([d[0] for d in aa.values])/2.
-#          avg_duration = np.mean([d[0] for d in aa.values])
-#          fv[fid] = (ndays, v_duration, avg_duration)
-#          
-#          if ndays > 3.75 and v_duration > 20 and avg_duration > 4: 
-#             start = []
-#             end = []
-#             bb =  df[df['uid']==fid][['time','time_end', 'date']]
-#             for date in v_date:
-#                 start.append(min(bb[bb['date']==date]['time']))
-#                 end.append(max(bb[bb['date']==date]['time_end']))
-#                  
-#             se[fid] = (v_date, start, end)
-#     return fv, se
-# 
-# def find_duration_lunch(df):
-#     u = {}
-#     dates =  set(df['date'].values)
-# 
-#     for d in dates:
-#         df_date = df[df['date']==d]
-#         
-#         # number of unique visitors that day
-#         uv = set(df_date['uid'].values)
-#         
-#         for un in uv:
-#             u{}
-        
