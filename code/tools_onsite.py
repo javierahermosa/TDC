@@ -31,3 +31,8 @@ def setup_data(df_list):
         df['hour'] = get_hour(df['start'].tolist())
         
     return df_list[0], df_list[1]
+
+def normalize_counts(df_days):
+    a = df_days.value_counts()
+    b = a.sort_index()
+    return b.index, 1.*b.values/len(df_days)

@@ -43,7 +43,7 @@ totalS_ids = set(mS['uid'].values)
 # print "percentage lunch G: %s" % 100.*len(lunchG_ids)/len(totalG_ids) 
 # print "percentage lunch S: %s" % 100.*len(lunchS_ids)/len(totalS_ids) 
 #plot_events_vs_time(lunchG, lunchS, key='time_start')
-
+    
 def naive_durations(df, ids):
     ud = {}
     durations = []
@@ -66,8 +66,7 @@ aS = [d for d in allS_durations if d>0]
 def plot_lunch_durations(dG, dS, gbins=200, sbins=330, label='lunch'):
     plt.hist(dG, bins=gbins, normed=True, alpha=1, color='#FF7878')
     plt.hist(dS, bins=sbins, normed=True, alpha=0.5, color= '#2396D4')
-    # plt.hist([dG, dS], normed=True, bins=[gbins,sbins], alpha=1, 
-    #             color=['#FF7878','#2396D4'], linewidth=0.5, fill=True)
+    
     plt.xlim(0,10)
     plt.xlabel('Visit Durations [hrs]')
     plt.ylabel('Normalized Counts')
@@ -77,9 +76,8 @@ def plot_lunch_durations(dG, dS, gbins=200, sbins=330, label='lunch'):
     #plt.show()
     
 #plot_lunch_durations(dG, dS)
-plot_lunch_durations(aG, aS, gbins=500, sbins=500, label='total')
-  
-
+plot_lunch_durations(aG, aS, gbins=300, sbins=300, label='total')
+ 
 # what about people that go to the cinema? How long do they stay at the mall?
 cineG_a = mG[mG['time_start']>dt.time(19,50,00)]
 cineG = cineG_a[cineG_a['time_start']<dt.time(20,30,00)]
