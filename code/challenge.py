@@ -10,7 +10,7 @@ import datetime as dt
 from plots import *
 from tools import *
 
-mallG = pd.read_csv(".../data/mallG.csv")
+mallG = pd.read_csv("../data/mallG.csv")
 mallS = pd.read_csv("../data/mallS.csv")
 
 mG, mS = setup_data([mallG, mallS])

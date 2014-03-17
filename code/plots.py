@@ -1,7 +1,7 @@
 # TERALYTICS DATA CHALLENGE - JAVIERA GUEDES - MARCH 2014
 
 import matplotlib
-matplotlib.use('Agg')
+#matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.dates as md
 import pandas as pd
@@ -130,14 +130,14 @@ def plot_events_vs_duration(mG, mS):
      plt.savefig(img_dir+'event_vs_duration.png', format="png", dpi=500)
    
 # Challenge Figure 6
-def plot_events_vs_time(mG, mS):
+def plot_events_vs_time(mG, mS, key='time'):
 
-     xG = [(x.hour *3600 + x.minute*60 + x.second)/3600. for x in mG['time'].values]
+     xG = [(x.hour *3600 + x.minute*60 + x.second)/3600. for x in mG[key].values]
      yG = mG['events'].values
-     xS = [(x.hour *3600 + x.minute*60 + x.second)/3600. for x in mS['time'].values]
+     xS = [(x.hour *3600 + x.minute*60 + x.second)/3600. for x in mS[key].values]
      yS = mS['events'].values
      
-     fig, (ax1, ax2) = plt.subplots(1,2, sharey=True, sharex=True)
+     fig, (ax1, ax2) = plt.subplots(1,2, sharex=True)
           
      ax1.plot(xG,yG, 'ro', alpha=0.3)
      ax2.plot(xS,yS, 'o', color= '#2396D4', alpha=0.3)
@@ -156,7 +156,7 @@ def plot_events_vs_time(mG, mS):
      ax1.set_xlabel('Time of the Day')
      ax2.set_xlabel('Time of the Day')
      ax1.set_ylabel('Number of Events')
-     plt.savefig(img_dir+'event_vs_time.png', format="png", dpi=500)
+     plt.savefig(img_dir+'event_vs_time_onsite.png', format="png", dpi=500)
 
 # Challenge Figure 6 (alternative)     
 def plot_events_vs_time2(mG, mS):
@@ -380,5 +380,6 @@ def plot_hour_distrib(mG, mS, time='start'):
     ax.yaxis.grid(True, linestyle='-', which='major', color='lightgrey',
                   alpha=0.5)
     ax.set_axisbelow(True)
-    plt.savefig(img_dir+'plot_hour_distrib.png', format="png", dpi=500 )
+    plt.savefig(img_dir+'plot_hour_distrib_onsite.png', format="png", dpi=500 )
+
 

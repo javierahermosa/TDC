@@ -40,9 +40,11 @@ def challenge():
 def beyond():
     return render_template('beyond.html')
     
-@app.route("/about")
-def about():
-    return render_template('about.html')
+@app.route("/onsite")
+@basic_auth.required
+def onsite():
+    return render_template('onsite.html')
+
     
 if __name__ == "__main__":
     port = int(os.environ.get("PORT",5000))

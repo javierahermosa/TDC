@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %} - Onsite {% endblock %}
+
+{% block menu %}
+<li><a href="{{ url_for('index') }}">HOME</a></li>
+<li><a href="{{ url_for('basics') }}">BASICS</a></li>
+<li><a href="{{ url_for('challenge') }}">CHALLENGE</a></li>
+<li><a href="{{ url_for('beyond') }}">BEYOND</a></li>
+ <li  class="active"><a href="{{ url_for('onsite') }}">ONSITE</a></li>
+{% endblock %}
+
+{% block content %}
+	<!-- PORTFOLIO SECTION -->
+	<div id="dg">
+		<div class="container">
+			<div class="row centered">
+				<h2> ONSITE CO-WORKING DAY</h2>
+				
+				<h3 class="text-left"> Today I focus on the task of indentifying certain activities carried out inside the malls. In particular, I will try to identify the users that go to the Malls at lunchtime. First, let's look at the distribution of the traces throughout the day. </h3>
+	
+			
+			<br>
+			<div class="col-lg-12">
+				<div>
+				<a href="{{ url_for('static', filename='img/plot_hour_distrib_onsite.png') }}">
+					<img class="img-rounded" alt="" height="500" width="auto"
+					src="{{ url_for('static', filename='img/plot_hour_distrib_onsite.png') }}">
+				</a>
+				<p class="text-center"> <b>Figure 1:</b> Distribution of the start time of the traces during the day for Mall G and Mall S. </p>
+				</div>
+			</div>
+			
+			<h3 class="text-left"> The distributions for Malls G and S are quite different. The distribution at Mall S is bimodal with two waves of visitors at lunchtime (12:00 hr) and dinner time (18:00 hr). The peak of the distribution at Mall G is also at lunch time, but this time there is no second peak at dinner time. In fact the number of visitors past 18:00 hrs seems to drop at Mall G.  </h3>
+			<h3 class="text-left"> What is interesting is that a larger percentage of users are found at Mall G during lunchtime (noon - 2pm) than at Mall S. <b>29.1%</b> of users appear to be at Mall G at lunchtime vs. <b>27.4%</b> at Mall S. These percentages are calculated as the number of user ids at lunchtime divided by the total number of users (based on the unique ids).</h3>
+			
+			<h3 class="text-left"> By the way, is the number of events particularly high at lunchtime? </h3>
+			
+			<br>
+			<div class="col-lg-12">
+				<div>
+				<a href="{{ url_for('static', filename='img/event_vs_time_onsite.png') }}">
+					<img class="img-rounded" alt="" height="500" width="auto"
+					src="{{ url_for('static', filename='img/event_vs_time_onsite.png') }}">
+				</a>
+				<p class="text-center"> <b>Figure 2:</b> Number of events during the day.</p>
+				</div>
+			</div>
+			
+					<h3 class="text-left"> There seem to be several users that register a large number of events at lunchtime. The highest number of events however, is registered at around the time at which the mall opens (9am). </h3>
+					<h3 class="text-left"> Now, let's select the lunch visitors as people that go to the mall between 12 noon and 2pm. At first, we don't cut the cohort further in terms of the duration of their visit, because it is possible that they stay at the mall longer than the typical length of lunch (1-2 hrs). </h3>
+					
+			
+					<br>
+					<div class="col-lg-12">
+						<div>
+						<a href="{{ url_for('static', filename='img/naive_durations_lunch_onsite.png') }}">
+							<img class="img-rounded" alt="" height="500" width="auto"
+							src="{{ url_for('static', filename='img/naive_durations_lunch_onsite.png') }}">
+						</a>
+						<p class="text-center"> <b>Figure 3:</b> Duration of the visits of lunch visitors for Mall G and Mall S.</p>
+						</div>
+					</div>
+					
+					<h3 class="text-left"> Many lunch visitors stay for longer than the duration of lunch! The "naive" duration here is the aggregate duration of all visitors in one day, for visitors that go to the mall at lunchtime. Also, we saw on the data challenge, users at Mall S tend to stay longer than at Mall G. It is also interesting to ask, how long does the general population stay at the mall. </h3>
+				
+					<br>
+					<div class="col-lg-12">
+						<div>
+						<a href="{{ url_for('static', filename='img/naive_durations_total_onsite.png') }}">
+							<img class="img-rounded" alt="" height="500" width="auto"
+							src="{{ url_for('static', filename='img/naive_durations_total_onsite.png') }}">
+						</a>
+						<p class="text-center"> <b>Figure 4:</b> Duration of the visits of all visitors for Mall G and Mall S.</p>
+						</div>
+					</div>
+					<h3 class="text-left"> In the total visits, we see a similar trend as in the lunch visitors, except that this time a smaller fraction of visitors stay shorter at mall S. Put in another way, a larger fraction of visitors to Mall S stay only one hour or shorter at Mall S, so they just go for lunch. The tail of the distribution of all visitors extends to several hours, but less lunch visitors tend to stay that long. </h3>	
+				   <h3 class="text-left"> We can do a similar analysis on people that go to the mall to watch movies after work. Movie times at Mall S are around 2pm, 6pm, and 8pm. For now, we focus on late (8pm) movie goers. The percentage of people who go to the late movie is <b>2.95%</b> at mall G and <b>9.69%</b> at Mall S. So a much larger fraction of users go to Mall S at later times than to Mall G, as we already saw from Figure 1. </h3>	
+				    <h3 class="text-left"> It would be interesting to know, what fraction of people that go to the cinema also have dinner at the mall. First of all, we find that <b>20.6%</b> of users go to Mall G for dinner, compared to <b>35.8%</b>, so again, more people go to Mall S after work than they do to Mall G. Since we know that there is a cinema at Mall S, we can calculate the fraction of movie-goers that have dinner at the mall. We find that <b>47.2%</b> of movie goers have dinner at Mall S! However, these numbers need to be looked at in more detail. We know that there is no mall in Mall G, and yet we also find that roughly <b>50%</b> of people that are at the mall at around 8pm are also at the mall at around dinner time.   </h3>	
+					
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- DG -->
+
+
+{% endblock %}
