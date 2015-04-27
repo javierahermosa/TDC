@@ -13,7 +13,7 @@ app.config.update(
 )
 
 app.config['BASIC_AUTH_USERNAME'] = 'teralytics'
-app.config['BASIC_AUTH_PASSWORD'] = 'dataimpact'
+app.config['BASIC_AUTH_PASSWORD'] = ''
 basic_auth = BasicAuth(app)
 
 @app.errorhandler(404)
